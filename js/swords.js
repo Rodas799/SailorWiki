@@ -2,7 +2,7 @@ const swordsData = [
     {
         name: "Katana",
         rarity: "Common",
-        image: "./assets/swords/katana.png",
+        image: "../assets/swords/katana.png",
         location: "Starter Island",
         howToGet: "Buy from Sword Dealer (1,000 Cash)"
     },
