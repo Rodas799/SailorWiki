@@ -1,0 +1,129 @@
+/* --- MELEES LAYOUT S-TIER --- */
+
+.wiki-container {
+    padding: 160px 8% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.wiki-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aurora-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    text-transform: capitalize;
+    color: var(--white);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.table-wrapper {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.table-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+
+    background-size: 40px 40px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 25px 40px;
+    background: rgba(0, 212, 255, 0.05);
+    border-bottom: 1px solid var(--glass-border);
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative; z-index: 1;
+}
+
+.melee-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    align-items: center;
+    transition: 0.4s var(--ease-impact);
+    position: relative; z-index: 1;
+}
+
+.melee-row:hover {
+    background: rgba(0, 212, 255, 0.03);
+    transform: translateX(10px);
+}
+
+.melee-info { display: flex; align-items: center; gap: 15px; }
+
+.melee-img-container {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.melee-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Placeholder para Melee */
+.melee-img-container.no-image::before {
+    content: "\f6de"; /* Fist icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: rgba(0, 212, 255, 0.2);
+    position: absolute;
+}
+
+.melee-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+.melee-method {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Pesquisa */
+.search-section { margin-bottom: 30px; display: flex; justify-content: center; }
+.search-box {
+    position: relative; width: 100%; max-width: 500px;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 15px 25px; border-radius: 12px; display: flex; align-items: center; gap: 15px;
+}
+.search-box input { background: transparent; border: none; color: white; width: 100%; outline: none; font-family: 'Poppins'; }
+.search-line { position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--primary-blue); transition: 0.4s; transform: translateX(-50%); }
+.search-box:focus-within .search-line { width: 100%; }
+
+@media (max-width: 768px) {
+    .table-header { display: none; }
+    .melee-row { grid-template-columns: 1fr; text-align: center; gap: 15px; }
+    .melee-info { flex-direction: column; }
+}

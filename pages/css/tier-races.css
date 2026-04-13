@@ -1,0 +1,205 @@
+/* --- LAYOUT DA PÁGINA --- */
+.wiki-container {
+    padding: 160px 5% 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wiki-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.wiki-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.wiki-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+}
+
+/* --- ESTRUTURA DA TIER LIST (UNIDA) --- */
+.tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+}
+
+.tier-row {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 140px;
+}
+
+.tier-row:last-child { border-bottom: none; }
+
+/* Letras S, A, B, C, D */
+.tier-label {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.8);
+    flex-shrink: 0;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.2);
+}
+
+/* Cores das Labels (Gradientes Premium) */
+.tier-s .tier-label { background: linear-gradient(180deg, #ff4e50, #f9d423); }
+.tier-a .tier-label { background: linear-gradient(180deg, #f857a6, #ff5858); }
+.tier-b .tier-label { background: linear-gradient(180deg, #00d2ff, #3a7bd5); }
+.tier-c .tier-label { background: linear-gradient(180deg, #1d976c, #93f9b9); }
+.tier-d .tier-label { background: linear-gradient(180deg, #606c88, #3f4c6b); color: #fff; }
+
+/* Área das Raças */
+.tier-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* --- QUADRADOS DE INVENTÁRIO (BADGES) --- */
+.race-badge {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.race-badge:hover {
+    transform: scale(1.1) translateY(-5px);
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.race-badge .name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    z-index: 2;
+}
+
+.race-badge .rarity-text {
+    font-size: 0.55rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Reflexo diagonal */
+.race-badge::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* --- CORES DE RARIDADE (EFEITOS GLOW) --- */
+/* --- RARIDADE SECRET (ESTILO EXCLUSIVO) --- */
+.rarity-secret {
+    border-color: #fff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+    animation: secretGlow 3s infinite alternate;
+}
+
+.rarity-secret .rarity-text { 
+    color: #ffffff; 
+    border: 1px solid #ffffff;
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowText 3s linear infinite;
+    font-weight: 900;
+}
+
+/* Animações para o item Secret */
+@keyframes secretGlow {
+    from { box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2); border-color: #fff; }
+    to { box-shadow: inset 0 0 30px rgba(58, 57, 57, 0.5); border-color: #ffffff; }
+}
+
+@keyframes rainbowText {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+.rarity-mythical {
+    border-color: #ff004c;
+    background: radial-gradient(circle, rgba(255, 0, 76, 0.2), transparent);
+}
+.rarity-mythical .rarity-text { color: #ff004c; border: 1px solid #ff004c; }
+
+.rarity-legendary {
+    border-color: #ffd000;
+    background: radial-gradient(circle, rgba(255, 187, 0, 0.2), transparent);
+}
+.rarity-legendary .rarity-text { color: #ffc400; border: 1px solid #ffd000; }
+
+.rarity-epic {
+    border-color: #ff00ff;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.15), transparent);
+}
+.rarity-epic .rarity-text { color: #ff00ff; border: 1px solid #ff00ff; }
+
+.rarity-rare {
+    border-color: #00d4ff;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.15), transparent);
+}
+.rarity-rare .rarity-text { color: #00d4ff; border: 1px solid #00d4ff; }
+
+.rarity-uncommon {
+    border-color: #00ff88;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.1), transparent);
+}
+.rarity-uncommon .rarity-text { color: #00ff88; border: 1px solid #00ff88; }
+
+.rarity-common {
+    border-color: #aaaaaa;
+    background: rgba(150, 150, 150, 0.05);
+}
+.rarity-common .rarity-text { color: #aaaaaa; border: 1px solid #aaaaaa; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .tier-row { flex-direction: column; }
+    .tier-label { width: 100%; height: 50px; font-size: 2rem; }
+    .tier-content { justify-content: center; }
+    .race-badge { width: 100px; height: 100px; }
+}

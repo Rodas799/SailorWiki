@@ -1,0 +1,276 @@
+/* --- WIKI RACES LAYOUT S-TIER --- */
+
+.wiki-container {
+    padding: 160px 8% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.wiki-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aurora-text {
+    font-family: 'Poppins', sans-serif; /* Unificado com o global */
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+/* Tabela com Fundo de Pontinhos e Glassmorphism */
+.table-wrapper {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* O fundo de diamantes aplicado apenas à tabela para destaque */
+.table-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 2fr;
+    padding: 25px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--glass-border);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Linha da Raça Refinada */
+.race-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 2fr;
+    padding: 30px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    align-items: center;
+    transition: 0.4s var(--ease-impact);
+    position: relative;
+    z-index: 1;
+}
+
+.race-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: scale(1.005);
+}
+
+.race-row:last-child { border-bottom: none; }
+
+/* Info da Raça */
+.race-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.rarity-indicator {
+    width: 6px;
+    height: 45px;
+    border-radius: 10px;
+    background: #333;
+    box-shadow: 0 0 15px transparent;
+    transition: 0.3s;
+}
+
+.race-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--white);
+    display: block;
+}
+
+.race-rarity-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.race-description {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    padding-right: 30px;
+}
+
+/* Stats Estilo "Game Badge" */
+.race-stats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.stat-badge {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.stat-badge:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+.stat-label {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 6px 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+}
+
+.stat-value {
+    padding: 6px 14px;
+    color: var(--primary-blue);
+    font-weight: 800;
+}
+
+/* Raridades com Brilho Dinâmico */
+.common .rarity-indicator { background: #888; }
+.uncommon .rarity-indicator { background: #4ecb71; box-shadow: 0 0 10px rgba(78, 203, 113, 0.3); }
+.rare .rarity-indicator { background: #3b82f6; box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
+.epic .rarity-indicator { background: #a855f7; box-shadow: 0 0 10px rgba(168, 85, 247, 0.3); }
+.legendary .rarity-indicator { background: var(--accent-gold); box-shadow: 0 0 15px var(--accent-gold); }
+.mythical .rarity-indicator { background: red; box-shadow: 0 0 20px red; }
+
+.legendary .race-name { color: var(--accent-gold); text-shadow: 0 0 15px rgba(255, 204, 0, 0.2); }
+.mythical .race-name { 
+    color: rgb(143, 5, 5); 
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    animation: mythicalPulse 2s infinite;
+}
+/* --- SEARCH BOX S-TIER --- */
+.search-section {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.4s var(--ease-impact);
+}
+
+.search-icon {
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 5px var(--primary-pink));
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.search-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-pink), var(--primary-blue));
+    transition: 0.4s var(--ease-impact);
+    transform: translateX(-50%);
+}
+
+.search-box:focus-within {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 20px rgba(255, 0, 122, 0.15);
+}
+
+.search-box:focus-within .search-line {
+    width: 100%;
+}
+@keyframes mythicalPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* --- RESPONSIVIDADE TOTAL --- */
+@media (max-width: 1024px) {
+    .table-header {
+        grid-template-columns: 1fr 1fr;
+    }
+    .race-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    .race-description {
+        display: none; /* Remove descrição no tablet para manter o fôlego */
+    }
+}
+
+@media (max-width: 768px) {
+    .table-header { display: none; }
+    
+    .race-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 40px 25px;
+        text-align: center;
+    }
+    
+    .race-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .rarity-indicator {
+        width: 80px;
+        height: 5px;
+    }
+    
+    .race-stats-list {
+        justify-content: center;
+    }
+    
+    .stat-badge {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

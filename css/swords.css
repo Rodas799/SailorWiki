@@ -1,0 +1,211 @@
+/* --- SWORDS LAYOUT S-TIER --- */
+
+.wiki-container {
+    padding: 160px 8% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.wiki-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aurora-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    text-transform: capitalize;
+    color: var(--white);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* Tabela de Espadas */
+.table-wrapper {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fundo Geométrico */
+.table-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.table-header {
+    display: grid;
+    /* Colunas: Nome(1.5), Local(1), Como Obter(1.5) */
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    padding: 25px 40px;
+    background: rgba(0, 212, 255, 0.05);
+    border-bottom: 1px solid var(--glass-border);
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative; z-index: 1;
+}
+
+.sword-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    padding: 20px 40px; /* Reduzi o padding vertical ligeiramente */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    align-items: center;
+    transition: 0.4s var(--ease-impact);
+    position: relative; z-index: 1;
+}
+
+.sword-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateX(10px);
+}
+
+/* Info da Espada (Imagem + Nome) */
+.sword-info { display: flex; align-items: center; gap: 15px; } /* Reduzi o gap */
+
+/* Contentor da Imagem MAIS PEQUENO (50px) */
+.sword-img-container {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px; /* Arredondamento menor para combinar */
+    padding: 3px; /* Padding interno menor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    overflow: hidden; /* Garante que nada sai do contentor */
+    position: relative;
+}
+
+.sword-row:hover .sword-img-container {
+    border-color: var(--primary-blue);
+    transform: scale(1.05) rotate(3deg); /* Animação mais subtil */
+}
+
+/* Estilo para a imagem real */
+.sword-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- ESTILO DO PLACEHOLDER (CSS Puro) --- */
+/* Esta classe deve ser adicionada ao contentor se não houver imagem real */
+.sword-img-container.no-image::before {
+    content: "\f6ca"; /* Ícone de espada do FontAwesome (necessário ter o FA carregado) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.1); /* Muito subtil */
+    position: absolute;
+    z-index: 0;
+}
+
+/* Fundo do placeholder */
+.sword-img-container.no-image {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.8));
+    border-style: dashed; /* Borda tracejada para indicar vazio */
+}
+
+.sword-name-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.sword-name {
+    font-weight: 700;
+    font-size: 1.2rem; /* Ligeiramente menor para equilibrar */
+    color: var(--white);
+    letter-spacing: -0.5px;
+}
+
+.sword-rarity {
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Colunas de Dados */
+.sword-location {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sword-method {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* --- SWORD RARITY EFFECTS --- */
+
+/* Cores de Destaque nas Linhas */
+.common { border-left: 3px solid #888; }
+.uncommon { border-left: 3px solid #4ecb71; }
+.rare { border-left: 3px solid #3b82f6; }
+.epic { border-left: 3px solid #a855f7; }
+
+/* Legendary */
+.legendary { border-left: 3px solid var(--accent-gold); }
+.legendary .sword-name { 
+    color: var(--accent-gold); 
+    text-shadow: 0 0 15px rgba(255, 204, 0, 0.2); 
+}
+
+/* Mythical */
+.mythical { border-left: 3px solid #ff0000; }
+.mythical .sword-name { 
+    color: #ff0000; 
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    animation: mythicalPulse 2s infinite;
+}
+
+@keyframes mythicalPulse {
+    0%, 100% { opacity: 1; filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.8)); }
+    50% { opacity: 0.7; filter: drop-shadow(0 0 15px rgba(255, 0, 0, 1)); }
+}
+
+/* Pesquisa */
+.search-section { margin-bottom: 30px; display: flex; justify-content: center; }
+.search-box {
+    position: relative; width: 100%; max-width: 500px;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 15px 25px; border-radius: 12px; display: flex; align-items: center; gap: 15px;
+}
+.search-box input { background: transparent; border: none; color: white; width: 100%; outline: none; font-family: 'Poppins'; }
+.search-line { position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--primary-blue); transition: 0.4s; transform: translateX(-50%); }
+.search-box:focus-within .search-line { width: 100%; }
+
+/* Mobile Adaptations */
+@media (max-width: 900px) {
+    .table-header { display: none; }
+    .sword-row { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 15px;
+        padding: 30px 20px;
+    }
+    .sword-info { flex-direction: column; }
+    .sword-location { justify-content: center; }
+    .sword-row:hover { transform: translateY(-3px); translateX(0); }
+}

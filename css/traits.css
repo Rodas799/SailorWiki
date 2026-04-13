@@ -1,0 +1,185 @@
+/* --- TRAITS LAYOUT S-TIER --- */
+
+.wiki-container {
+    padding: 160px 8% 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- NOVO: ESTILO DO TÍTULO CENTRALIZADO --- */
+.wiki-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aurora-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    /* Tamanho maior e responsivo */
+    font-size: clamp(3rem, 8vw, 5rem); 
+    text-transform: capitalize;
+    color: var(--white);
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.wiki-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+}
+
+/* --- SEARCH SECTION --- */
+.search-section {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.search-icon {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.search-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transition: 0.4s var(--ease-impact);
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px var(--primary-blue);
+}
+
+.search-box:focus-within {
+    border-color: rgba(0, 212, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.search-box:focus-within .search-line {
+    width: 100%;
+}
+
+/* --- TABLE ARCHITECTURE --- */
+
+.table-wrapper {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 25px 40px;
+    background: rgba(0, 212, 255, 0.05);
+    border-bottom: 1px solid var(--glass-border);
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.trait-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 25px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    align-items: center;
+    transition: 0.4s var(--ease-impact);
+}
+
+.trait-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateX(10px);
+}
+
+/* Info Section */
+.trait-info { display: flex; align-items: center; gap: 20px; }
+
+.trait-rank-icon {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+.trait-name { font-weight: 700; font-size: 1.4rem; color: #fff; }
+.trait-rarity { font-size: 0.75rem; text-transform: uppercase; opacity: 0.5; font-weight: 600; }
+
+/* Stats Badges */
+.trait-stats-list { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.trait-badge {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    display: flex;
+    font-size: 0.85rem;
+    overflow: hidden;
+}
+
+.trait-label { padding: 5px 12px; background: rgba(0, 212, 255, 0.1); color: var(--primary-blue); font-weight: 600; }
+.trait-value { padding: 5px 15px; color: #fff; font-weight: 700; }
+
+/* Raridades */
+.common .trait-rank-icon { background: #888; }
+.uncommon .trait-rank-icon { background: #4ecb71; }
+.rare .trait-rank-icon { background: #3b82f6; }
+.epic .trait-rank-icon { background: #a855f7; }
+.legendary .trait-rank-icon { background: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold); }
+.mythical .trait-rank-icon { background: #ff0000; box-shadow: 0 0 15px #ff0000; }
+.secret .trait-rank-icon { background: #000000; box-shadow: 0 0 20px #ffffff; animation: pulseSecret 2s infinite alternate; }
+
+.legendary .trait-name { color: var(--accent-gold); }
+.mythical .trait-name { color: #ff0000; text-shadow: 0 0 10px rgba(255,0,0,0.3); }
+.secret .trait-name { color: #000000; text-shadow: 0 0 15px rgb(255, 255, 255); }
+
+@keyframes pulseSecret {
+    from { opacity: 1; transform: rotate(45deg) scale(1); }
+    to { opacity: 0.6; transform: rotate(45deg) scale(1.2); }
+}
+
+@media (max-width: 768px) {
+    .table-header { display: none; }
+    .trait-row { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+    .trait-info { flex-direction: column; }
+    .trait-stats-list { justify-content: center; }
+}

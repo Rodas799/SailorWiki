@@ -1,0 +1,260 @@
+/* --- RUNES LAYOUT S-TIER --- */
+
+.wiki-container {
+    padding: 160px 8% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.wiki-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aurora-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    text-transform: capitalize;
+    color: var(--white);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* --- SEARCH SECTION --- */
+.search-section {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transition: 0.4s var(--ease-impact);
+    transform: translateX(-50%);
+}
+
+.search-box:focus-within .search-line {
+    width: 100%;
+}
+
+/* --- TABLE ARCHITECTURE --- */
+.table-wrapper {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* Fundo Geométrico Subtil */
+.table-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: 40px 40px;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1fr;
+    padding: 25px 40px;
+    background: rgba(0, 212, 255, 0.05);
+    border-bottom: 1px solid var(--glass-border);
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.rune-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1fr;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    align-items: center;
+    transition: 0.4s var(--ease-impact);
+    position: relative;
+    z-index: 1;
+}
+
+.rune-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateX(10px);
+}
+
+/* --- RUNE INFO & IMG --- */
+.rune-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.rune-img-container {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rune-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Placeholder para Runas */
+.rune-img-container.no-image::before {
+    content: "\f3a5"; /* Ícone de gema/cristal */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.rune-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--white);
+    display: block;
+}
+
+.rune-rarity {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 1px;
+}
+
+/* --- STATS BADGES --- */
+.rune-stats-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rune-badge {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    display: inline-flex;
+    font-size: 0.8rem;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.badge-label {
+    padding: 4px 10px;
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--primary-blue);
+    font-weight: 700;
+    min-width: 55px;
+    text-align: center;
+}
+
+.badge-val {
+    padding: 4px 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- LOCATION --- */
+.rune-location {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- RARITY EFFECTS --- */
+.rare { border-left: 4px solid #3b82f6; }
+.epic { border-left: 4px solid #a855f7; }
+
+.legendary { border-left: 4px solid var(--accent-gold); }
+.legendary .rune-name { color: var(--accent-gold); }
+
+.mythical { border-left: 4px solid #ff0000; }
+.mythical .rune-name { 
+    color: #ff0000; 
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); 
+}
+
+/* Secret Rarity (Efeito Aurora/Glow) */
+.secret { border-left: 4px solid #494949; }
+.secret .rune-name { 
+    color: #000000;
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+    animation: secretGlow 3s infinite alternate;
+}
+
+@keyframes secretGlow {
+    0% { filter: hue-rotate(0deg); transform: scale(1); }
+    100% { filter: hue-rotate(45deg); transform: scale(1.02); }
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+    .table-header { display: none; }
+    
+    .rune-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+        padding: 40px 20px;
+    }
+    
+    .rune-info {
+        flex-direction: column;
+    }
+    
+    .rune-stats-box {
+        align-items: center;
+    }
+    
+    .rune-location {
+        justify-content: center;
+    }
+}

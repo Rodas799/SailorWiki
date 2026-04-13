@@ -1,0 +1,169 @@
+/* --- ACCESSORIES LAYOUT --- */
+
+.wiki-container {
+    padding: 160px 8% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.wiki-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aurora-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 5rem);
+    text-transform: capitalize;
+    color: var(--white);
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* --- SEARCH BAR --- */
+.search-section {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+}
+
+.search-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transition: 0.4s;
+    transform: translateX(-50%);
+}
+
+.search-box:focus-within .search-line { width: 100%; }
+
+/* --- TABLE --- */
+.table-wrapper {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Atualize estas classes no seu accessories.css */
+
+.table-header {
+    display: grid;
+    /* Ajustado para 4 colunas: Nome, Stats, Método, Localização */
+    grid-template-columns: 1fr 1.2fr 1fr 0.8fr; 
+    padding: 25px 40px;
+    background: rgba(0, 212, 255, 0.05);
+    border-bottom: 1px solid var(--glass-border);
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+}
+
+.acc-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr 0.8fr; 
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    align-items: center;
+    transition: 0.3s;
+}
+
+.acc-location {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* No Media Query (Mobile), garanta que a localização também apareça bem */
+@media (max-width: 900px) {
+    .acc-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .acc-location {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+.acc-row:hover { background: rgba(255, 255, 255, 0.03); transform: translateX(10px); }
+
+/* --- IMG & PLACEHOLDER --- */
+.acc-info { display: flex; align-items: center; gap: 15px; }
+
+.acc-img-container {
+    width: 100px; height: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+}
+
+.acc-img-container img { width: 90%; height: 90%; object-fit: contain; }
+
+.acc-img-container.no-image::before {
+    content: "\f805"; /* Helmet Icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.acc-name { font-weight: 700; font-size: 1.1rem; color: #fff; display: block; }
+.acc-rarity { font-size: 0.7rem; text-transform: uppercase; opacity: 0.5; }
+
+/* --- STATS --- */
+.acc-stats-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.stat-badge {
+    background: rgba(0,0,0,0.3);
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+.acc-method { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
+
+/* Rarities */
+.legendary .acc-name { color: #ffcc00; }
+.mythical .acc-name { color: #ff0000; text-shadow: 0 0 10px rgba(255,0,0,0.3); }
+
+@media (max-width: 900px) {
+    .table-header { display: none; }
+    .acc-row { grid-template-columns: 1fr; text-align: center; gap: 15px; }
+    .acc-info { flex-direction: column; }
+    .acc-stats-list { justify-content: center; }
+}
