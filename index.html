@@ -17,76 +17,84 @@
 <div class="hero-bg">
     <div class="video-background">
         <iframe 
-    src="https://www.youtube.com/embed/-hpUoQ9vjBM?autoplay=1&mute=1&loop=1&playlist=-hpUoQ9vjBM&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&origin=http://127.0.0.1" 
-    frameborder="0" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen>
-</iframe>
+            src="https://www.youtube.com/embed/-hpUoQ9vjBM?autoplay=1&mute=1&loop=1&playlist=-hpUoQ9vjBM&controls=0&rel=0&modestbranding=1"
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+        </iframe>
     </div>
     <div class="video-overlay"></div>
 </div>
 
-    <header>
-        <a href="./index.html"><img src="./assets/logobgpng.png" alt="Sailor Wiki"></a>
-          
-        <nav>
-            <ul>
-                <li><a href="/index.html">Início</a></li> 
-                
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">
-                        Wiki <i class="fas fa-caret-down"></i>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="../pages/races.html">Races</a>
-                        <a href="./pages/clans.html">Clans</a>
-                        <a href="./pages/fruits.html">Fruits</a>
-                        <a href="./pages/swords.html">Swords</a>
-                        <a href="./pages/melees.html">Melees</a>
-                        <a href="./pages/runes.html">Runes</a>
-                        <a href="./pages/traits.html">Traits</a>
-                        <a href="../pages/accessories.html">Accessories</a>
-                    </div>
-                </li>
+<header>
+    <a href="./index.html">
+        <img src="./assets/logobgpng.png" alt="Sailor Wiki">
+    </a>
+      
+    <nav>
+        <ul>
+            <!-- CORRIGIDO -->
+            <li><a href="index.html">Início</a></li> 
+            
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">
+                    Wiki <i class="fas fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <!-- TODOS CORRIGIDOS -->
+                    <a href="./pages/races.html">Races</a>
+                    <a href="./pages/clans.html">Clans</a>
+                    <a href="./pages/fruits.html">Fruits</a>
+                    <a href="./pages/swords.html">Swords</a>
+                    <a href="./pages/melees.html">Melees</a>
+                    <a href="./pages/runes.html">Runes</a>
+                    <a href="./pages/traits.html">Traits</a>
+                    <a href="./pages/accessories.html">Accessories</a>
+                </div>
+            </li>
 
-                <li><a href="./pages/tierlists.html" class="highlight">Tierlists</a></li>
-                <li><a href="./pages/builds.html">Builds</a></li>
-            </ul>
-        </nav>
-        <div class="nav-actions">
-            <button class="btn-main" onclick="window.open('https://www.roblox.com/games/77747658251236/Sailor-Piece#!/about')">Jogar Agora</button>
+            <li><a href="./pages/tierlists.html" class="highlight">Tierlists</a></li>
+            <li><a href="./pages/builds.html">Builds</a></li>
+        </ul>
+    </nav>
+
+    <div class="nav-actions">
+        <button class="btn-main" onclick="window.open('https://www.roblox.com/games/77747658251236/Sailor-Piece#!/about')">
+            Jogar Agora
+        </button>
+    </div>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <h1 class="aurora-text">Sailor Wiki</h1>
+        <div class="hero-btns">
+            <button class="btn-main" style="background: linear-gradient(45deg, var(--primary-pink), var(--primary-blue));">
+                <a href="https://www.roblox.com/games/77747658251236/Sailor-Piece#!/about" style="color: white; text-decoration: none;">
+                    Jogar Agora
+                </a>
+            </button>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <section class="hero" id="home">
-            <h1 class="aurora-text">Sailor Wiki</h1>
-            <div class="hero-btns">
-                <button class="btn-main" style="background: linear-gradient(45deg, var(--primary-pink), var(--primary-blue));">
-                    <a href="https://www.roblox.com/games/77747658251236/Sailor-Piece#!/about" style="color: white; text-decoration: none;">Jogar Agora</a>
-                </button>
-            </div>
-        </section>
-        <br>
-        <br>
-        <section class="updates-section">
-            <div class="update-container" id="next-update">
-                </div>
-            <div class="update-container" id="last-update">
-                </div>
-        </section>
-    </main>
+    <br><br>
 
+    <section class="updates-section">
+        <div class="update-container" id="next-update"></div>
+        <div class="update-container" id="last-update"></div>
+    </section>
+</main>
 
-    <script>
-        // Efeito de transparência no header ao scrollar
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.style.padding = window.scrollY > 50 ? '10px 8%' : '15px 8%';
-            header.style.background = window.scrollY > 50 ? 'rgba(5, 2, 10, 0.95)' : 'rgba(10, 5, 20, 0.85)';
-        });
-    </script>
+<script>
+    // Efeito de transparência no header ao scrollar
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        header.style.padding = window.scrollY > 50 ? '10px 8%' : '15px 8%';
+        header.style.background = window.scrollY > 50 ? 'rgba(5, 2, 10, 0.95)' : 'rgba(10, 5, 20, 0.85)';
+    });
+</script>
 
-    <script src="./js/home.js"></script>
+<script src="./js/home.js"></script>
+
 </body>
 </html>
