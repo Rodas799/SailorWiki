@@ -1,0 +1,186 @@
+/* --- LAYOUT DA PÁGINA --- */
+.wiki-container {
+    padding-top: 100px; /* IMPORTANTE: Ajusta este valor conforme a altura do teu header */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.wiki-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.aurora-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+/* --- BARRA DE PESQUISA --- */
+.search-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 30px auto 0;
+    z-index: 10;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-blue);
+    opacity: 0.6;
+}
+
+#bossSearch {
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+#bossSearch:focus {
+    border-color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+/* --- GRID DE 5 POR LINHA --- */
+.bosses-grid {
+    display: grid;
+    /* Define exatamente 5 colunas */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 25px;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+/* --- CARD DO BOSS --- */
+.boss-card {
+    background: rgba(1, 129, 189, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    text-decoration: none;
+    display: block;
+}
+
+.boss-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-blue);
+    background: rgba(39, 36, 36, 0.548);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(2, 2, 2, 0.788);
+}
+
+/* --- IMAGEM --- */
+.boss-img-container {
+    width: 100%;
+    height: 280px; 
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.boss-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%) brightness(0.9);
+    transition: transform 0.8s ease, filter 0.5s ease;
+}
+
+.boss-card:hover .boss-img-container img {
+    transform: scale(1.1);
+    filter: grayscale(0%) brightness(1.1);
+}
+
+/* --- INFO --- */
+.boss-info {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.boss-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.boss-status {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.boss-status::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--primary-pink);
+    border-radius: 50%;
+}
+
+/* --- OVERLAY --- */
+.boss-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.15) 0%, transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 3;
+}
+
+.boss-card:hover .boss-overlay {
+    opacity: 1;
+}
+
+.view-btn {
+    display: flex;         /* Alinha ícone e texto */
+    align-items: center;    /* Centraliza verticalmente */
+    padding: 10px 20px;
+    color: #01a0a0;
+    font-family: 'Orbitron';
+    font-size: 40px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1300px) {
+    .bosses-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 1000px) {
+    .bosses-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .bosses-grid { grid-template-columns: repeat(2, 1fr); }
+    .wiki-container { padding-top: 80px; }
+    .boss-img-container { height: 200px; }
+}

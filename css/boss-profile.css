@@ -1,0 +1,241 @@
+/* ============================================================
+   BOSS PROFILE - SAILOR WIKI (ESTILO DESCONTRAÍDO & PREMIUM)
+   ============================================================ */
+
+/* --- LAYOUT PRINCIPAL --- */
+.boss-profile-container {
+    padding-top: 160px; /* Distância de segurança da Navbar */
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    padding-inline: 30px;
+}
+
+.boss-profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 70px;
+    align-items: start; /* Alinha o topo da imagem com o topo do texto */
+}
+
+/* --- COLUNA DA ESQUERDA (VISUAL) --- */
+.boss-visual {
+    position: sticky;
+    top: 160px;
+}
+
+.boss-image-card {
+    position: relative;
+    border-radius: 45px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    line-height: 0;
+}
+
+.boss-image-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.boss-image-card:hover img {
+    transform: scale(1.08);
+}
+
+.boss-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: var(--primary-blue, #00d4ff);
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
+
+/* --- COLUNA DA DIREITA (DETALHES) --- */
+
+/* Título e Subtítulo */
+.boss-title-area {
+    margin-bottom: 40px;
+}
+
+.boss-title-area h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    margin: 0 0 10px 0;
+    line-height: 0.85;
+    letter-spacing: -2px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.boss-subtitle {
+    color: var(--primary-blue, #00d4ff);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Blocos de Informação */
+.boss-info-box {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 35px;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Stats */
+.stat-item {
+    margin-bottom: 35px;
+}
+
+.stat-item:last-child { margin-bottom: 0; }
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* BARRA DE VIDA VERDE */
+.hp-bar-container {
+    position: relative;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hp-bar-fill {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #2ecc71, #27ae60, #2ecc71);
+    background-size: 200% 100%;
+    animation: hpFlow 4s linear infinite;
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+}
+
+@keyframes hpFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.hp-value {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron';
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.value-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* --- LISTA DE DROPS (LIMPA) --- */
+.drops-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.drop-card {
+    background: transparent;
+    border: none;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.drop-card:hover {
+    transform: translateX(10px);
+}
+
+.drop-name {
+    font-size: rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.drop-chance {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+.rarity-mythical .drop-name { 
+    color: #ff0000; 
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.3); 
+}
+/* CORES POR RARIDADE (TEXTO) */
+.rarity-legendary .drop-name { 
+    color: #ffae00; 
+    text-shadow: 0 0 15px rgba(255, 174, 0, 0.3); 
+}
+.rarity-epic .drop-name { 
+    color: #a335ee; 
+}
+.rarity-rare .drop-name { 
+    color: #3585ee; 
+}
+.rarity-uncommon .drop-name { 
+    color: #1eff00; 
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1000px) {
+    .boss-profile-container {
+        padding-top: 120px;
+    }
+    
+    .boss-profile-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .boss-visual {
+        position: relative;
+        top: 0;
+    }
+
+    .boss-title-area {
+        text-align: center;
+    }
+    
+    .boss-image-card {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}

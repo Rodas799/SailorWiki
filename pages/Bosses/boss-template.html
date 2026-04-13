@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title id="page-title">Boss Profile | Sailor Wiki</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/boss-profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../../assets/sailor_wiki_favicon.ico">
+</head>
+<body>
+
+    <header>
+    <!-- LOGO -->
+    <a href="https://rodas799.github.io/SailorWiki">
+        <img src="../assets/logobgpng.png" alt="Sailor Wiki">
+    </a>
+      
+    <nav>
+        <ul>
+            <!-- NAVBAR COM LINKS ABSOLUTOS -->
+            <li><a href="https://rodas799.github.io/SailorWiki/index.html">Início</a></li> 
+            
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">
+                    Wiki <i class="fas fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="https://rodas799.github.io/SailorWiki/pages/races.html">Races</a>
+                    <a href="https://rodas799.github.io/SailorWiki/pages/clans.html">Clans</a>
+                    <a href="https://rodas799.github.io/SailorWiki/pages/fruits.html">Fruits</a>
+                    <a href="https://rodas799.github.io/SailorWiki/pages/swords.html">Swords</a>
+                    <a href="https://rodas799.github.io/SailorWiki/pages/melees.html">Melees</a>
+                    <a href="https://rodas799.github.io/SailorWiki/pages/runes.html">Runes</a>
+                    <a href="https://rodas799.github.io/SailorWiki/pages/traits.html">Traits</a>
+                    <a href="https://rodas799.github.io/SailorWiki/pages/accessories.html">Accessories</a>
+                </div>
+            </li>
+
+            <li><a href="https://rodas799.github.io/SailorWiki/pages/tierlists.html" class="highlight">Tierlists</a></li>
+            <li><a href="https://rodas799.github.io/SailorWiki/pages/builds.html">Builds</a></li>
+            <li><a href="https://rodas799.github.io/SailorWiki/pages/bosses.html">Bosses</a></li>
+        </ul>
+    </nav>
+
+    <div class="nav-actions">
+        <button class="btn-main" onclick="window.open('https://www.roblox.com/games/77747658251236/Sailor-Piece#!/about')">
+            Jogar Agora
+        </button>
+    </div>
+</header>
+
+   <main class="boss-profile-container" id="boss-content">
+    <div class="boss-header-full">
+        <h1 class="aurora-text">${data.name}</h1>
+        <div class="boss-type-tag">World Boss Entry</div>
+    </div>
+
+    <div class="boss-profile-grid">
+        <div class="boss-visual">
+            <div class="boss-image-card">
+                <img src="${data.image}" alt="${data.name}">
+            </div>
+        </div>
+        
+        <div class="boss-details">
+            <section class="boss-info-box stats-box">
+                <h3 class="section-title"><i class="fas fa-chart-bar"></i> Combat Data</h3>
+                <div class="stat-item">
+                    <span class="label">Total Vitality</span>
+                    <div class="hp-bar-container">
+                        <div class="hp-bar-fill"></div>
+                        <span class="hp-value">${data.hp} HP</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Spawn Territory</span>
+                    <span class="value-text"><i class="fas fa-map-marker-alt"></i> ${data.location}</span>
+                </div>
+            </section>
+
+            <section class="boss-info-box drops-box">
+                <h3 class="section-title"><i class="fas fa-treasure-chest"></i> Loot Table</h3>
+                <div class="drops-grid">
+                    ${data.drops.map(drop => `
+                        <div class="drop-card rarity-${drop.rarity}">
+                            <div class="drop-icon-placeholder"></div>
+                            <div class="drop-info-text">
+                                <span class="drop-name">${drop.name}</span>
+                                <span class="drop-chance">${drop.chance} drop rate</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+    <script src="../../js/bossData.js"></script>
+    <script>
+        function loadBoss() {
+    const params = new URLSearchParams(window.location.search);
+    const bossId = params.get('boss');
+    
+    if (typeof bossData === 'undefined') {
+        document.getElementById('boss-content').innerHTML = "<h1 style='color:white; text-align:center; padding-top:50px;'>Erro: Base de dados não carregada!</h1>";
+        return;
+    }
+
+    const data = bossData[bossId];
+
+    if (!data) {
+        document.getElementById('boss-content').innerHTML = "<h1 style='color:white; text-align:center; padding-top:50px;'>Boss não encontrado!</h1>";
+        return;
+    }
+
+    document.getElementById('page-title').innerText = `${data.name} | Sailor Wiki`;
+
+    // Novo Layout: Nome acima das Stats
+    document.getElementById('boss-content').innerHTML = `
+    <div class="boss-profile-grid">
+        <div class="boss-visual">
+            <div class="boss-image-card">
+                <img src="${data.image}" alt="${data.name}">
+                <div class="boss-badge">World Boss</div>
+            </div>
+        </div>
+        
+        <div class="boss-details">
+            <div class="boss-title-container">
+                <h1 class="aurora-text">${data.name}</h1>
+            </div>
+
+            <section class="boss-info-box stats-box">
+                <div class="stat-item">
+                    <span class="label"><i class="fas fa-heart"></i> Vida Total</span>
+                    <div class="hp-bar-container">
+                        <div class="hp-bar-fill"></div>
+                        <span class="hp-value">${data.hp} HP</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="label"><i class="fas fa-map-marker-alt"></i> Localização</span>
+                    <span class="value-text">${data.location}</span>
+                </div>
+            </section>
+
+            <section class="boss-info-box drops-box">
+                <h3 class="section-title">Possíveis Drops</h3>
+                <div class="drops-grid">
+                    ${data.drops.map(drop => `
+                        <div class="drop-card rarity-${drop.rarity}">
+                            <span class="drop-name">${drop.name}</span>
+                            <span class="drop-chance">${drop.chance}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </section>
+        </div>
+    </div>
+`;
+}
+window.onload = loadBoss;
+    </script>
+</body>
+</html>
