@@ -3,7 +3,7 @@ const bossData = {
         name: "Atomic",
         hp: "2,000,000,000",
         location: "Lawless Island",
-        image: "../assets/Bosses/Atomic.png",
+        image: "../../assets/Bosses/Atomic.png",
         drops: [
             { name: "Atomic Omen", chance: "0.8%", rarity: "mythical" },
             { name: "Eminence Essence", chance: "1.7%", rarity: "mythical" },
@@ -16,7 +16,7 @@ const bossData = {
         name: "Blessed Maiden",
         hp: "650,000,000",
         location: "Boss Island",
-        image: "../assets/Bosses/BlessedMaiden.png",
+        image: "../../assets/Bosses/BlessedMaiden.png",
         drops: [
             { name: "Celestial Mark", chance: "0.8%", rarity: "mythical" },
             { name: "Aero Core", chance: "1.7%", rarity: "mythical" },
@@ -28,7 +28,7 @@ const bossData = {
     "corruptedknight": {
         name: "Corrupted Knight",
         hp: "750,000,000",
-        location: "Forgotten Castle",
+        location: "Boss Island",
         image: "../../assets/Bosses/CorruptedKnight.png",
         drops: [
             { name: "Corrupt Crown", chance: "0.7%", rarity: "mythical" },
@@ -78,7 +78,7 @@ const bossData = {
     "demonking": {
         name: "Demon King",
         hp: "150,000,000",
-        location: "Hell's Gate",
+        location: "Academy Island",
         image: "../../assets/Bosses/DemonKing.png",
         drops: [
             { name: "Imperial Mask", chance: "1%", rarity: "mythical" },
@@ -170,7 +170,7 @@ const bossData = {
     "moonslayer": {
         name: "Moon Slayer",
         hp: "1,250,000,000",
-        location: "Lunar Peak",
+        location: "Boss Island",
         image: "../../assets/Bosses/MoonSlayer.png",
         drops: [
             { name: "Moon Crest", chance: "0.55%", rarity: "mythical" },
@@ -201,7 +201,7 @@ const bossData = {
     "slime": {
         name: "Slime",
         hp: "200,000,000",
-        location: "Green Plains",
+        location: "Slime Island",
         image: "../../assets/Bosses/Slime.png",
         drops: [
             { name: "Slime Core", chance: "5%", rarity: "mythical" },
@@ -289,9 +289,9 @@ const bossData = {
         ]
     },
     "strongestshinobi": {
-        name: "Ninja Island",
+        name: "Strongest Shinobi",
         hp: "2,000,000,000",
-        location: "Hidden Leaf Ruins",
+        location: "Ninja Island",
         image: "../../assets/Bosses/StrongestShinobi.png",
         drops: [
             { name: "Path Fragment", chance: "0.88%", rarity: "mythical" },
@@ -308,7 +308,7 @@ const bossData = {
     "truemanipulator": {
         name: "True Manipulator",
         hp: "130,000,000",
-        location: "Master's Void",
+        location: "Soul Dominion",
         image: "../../assets/Bosses/TrueManipulator.png",
         drops: [
             { name: "Evolution Fragment", chance: "32.77%", rarity: "mythical" },
@@ -321,7 +321,7 @@ const bossData = {
     "yamato": {
         name: "Yamato",
         hp: "95,000,000",
-        location: "Onigashima Roof",
+        location: "Judgment Island",
         image: "../../assets/Bosses/Yamato.png",
         drops: [
             { name: "Azure Heart", chance: "1%", rarity: "mythical" },
