@@ -24,7 +24,7 @@ const bossId = boss.toLowerCase().replace(/\s+/g, '');
 const bossLink = `Bosses/boss-template.html?boss=${bossId}`;
         
         // Caminho da imagem (mantido conforme estavas a usar)
-        const bossImg = `../assets/bosses/${boss.replace(/\s+/g, '')}.png`;
+        const bossImg = `../assets/Bosses/${boss.replace(/\s+/g, '')}.png`;
 
         return `
             <a href="${bossLink}" class="boss-card">
