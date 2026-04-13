@@ -3,7 +3,7 @@ const bossData = {
         name: "Atomic",
         hp: "2,000,000,000",
         location: "Lawless Island",
-        image: "../../assets/bosses/Atomic.png",
+        image: "../assets/Bosses/Atomic.png",
         drops: [
             { name: "Atomic Omen", chance: "0.8%", rarity: "mythical" },
             { name: "Eminence Essence", chance: "1.7%", rarity: "mythical" },
@@ -16,7 +16,7 @@ const bossData = {
         name: "Blessed Maiden",
         hp: "650,000,000",
         location: "Boss Island",
-        image: "../../assets/bosses/BlessedMaiden.png",
+        image: "../assets/Bosses/BlessedMaiden.png",
         drops: [
             { name: "Celestial Mark", chance: "0.8%", rarity: "mythical" },
             { name: "Aero Core", chance: "1.7%", rarity: "mythical" },
@@ -29,7 +29,7 @@ const bossData = {
         name: "Corrupted Knight",
         hp: "750,000,000",
         location: "Forgotten Castle",
-        image: "../../assets/bosses/CorruptedKnight.png",
+        image: "../../assets/Bosses/CorruptedKnight.png",
         drops: [
             { name: "Corrupt Crown", chance: "0.7%", rarity: "mythical" },
             { name: "Corruptiopn Core", chance: "1.6%", rarity: "mythical" },
@@ -42,7 +42,7 @@ const bossData = {
         name: "Cursed Vessel",
         hp: "3,750,000",
         location: "Shibuya Station",
-        image: "../../assets/bosses/CursedVessel.png",
+        image: "../../assets/Bosses/CursedVessel.png",
         drops: [
             { name: "Divergent Pulse", chance: "8%", rarity: "legendary" },
             { name: "Cursed Vessel Hair", chance: "10%", rarity: "legendary" },
@@ -61,7 +61,7 @@ const bossData = {
         name: "Curse King",
         hp: "5,000,000",
         location: "Shibuya Station",
-        image: "../../assets/bosses/CurseKing.png",
+        image: "../../assets/Bosses/CurseKing.png",
         drops: [
             { name: "Divergent Pulse", chance: "5%", rarity: "mythical" },
             { name: "Cursed King Collar", chance: "8%", rarity: "mythical" },
@@ -79,7 +79,7 @@ const bossData = {
         name: "Demon King",
         hp: "150,000,000",
         location: "Hell's Gate",
-        image: "../../assets/bosses/DemonKing.png",
+        image: "../../assets/Bosses/DemonKing.png",
         drops: [
             { name: "Imperial Mask", chance: "1%", rarity: "mythical" },
             { name: "Demon King Outfit", chance: "1.5%", rarity: "mythical" },
@@ -92,7 +92,7 @@ const bossData = {
         name: "Excalibur/Knight",
         hp: "2,500,000",
         location: "Boss Island",
-        image: "../../assets/bosses/Excalibur.png",
+        image: "../../assets/Bosses/Excalibur.png",
         drops: [
             { name: "Excalibur", chance: "4%", rarity: "legendary" },
             { name: "Holy Armor", chance: "10%", rarity: "legendary" },
@@ -108,7 +108,7 @@ const bossData = {
         name: "Gilgamesh/King of Heroes",
         hp: "300,000,000",
         location: "Boss Island",
-        image: "../../assets/bosses/Gilgamesh.png",
+        image: "../../assets/Bosses/Gilgamesh.png",
         drops: [
             { name: "Phantasm Core", chance: "1%", rarity: "mythical" },
             { name: "King of Heroes Armor", chance: "2.3%", rarity: "mythical" },
@@ -121,7 +121,7 @@ const bossData = {
         name: "Ice Queen",
         hp: "1,650,000,000",
         location: "Boss Island",
-        image: "../../assets/bosses/IceQueen.png",
+        image: "../../assets/Bosses/IceQueen.png",
         drops: [
             { name: "Ice Core", chance: "0.52%", rarity: "mythical" },
             { name: "Glacier Remnant", chance: "1.2%", rarity: "mythical" },
@@ -134,7 +134,7 @@ const bossData = {
         name: "Limitless Sorcerer",
         hp: "4,000,000",
         location: "Shibuya Station",
-        image: "../../assets/bosses/LimitlessSorcerer.png",
+        image: "../../assets/Bosses/LimitlessSorcerer.png",
         drops: [
             { name: "Infinity Core", chance: "6%", rarity: "legendary" },
             { name: "Limitless Sorcerer Blindflod", chance: "10%", rarity: "legendary" },
@@ -152,7 +152,7 @@ const bossData = {
         name: "Manipulator",
         hp: "25,000,000",
         location: "Hollow Island",
-        image: "../../assets/bosses/Manipulator.png",
+        image: "../../assets/Bosses/Manipulator.png",
         drops: [
             { name: "Transmutation Shard", chance: "2%", rarity: "mythical" },
             { name: "Hogyoku Fragment", chance: "2,4%", rarity: "mythical" },
@@ -171,7 +171,7 @@ const bossData = {
         name: "Moon Slayer",
         hp: "1,250,000,000",
         location: "Lunar Peak",
-        image: "../../assets/bosses/MoonSlayer.png",
+        image: "../../assets/Bosses/MoonSlayer.png",
         drops: [
             { name: "Moon Crest", chance: "0.55%", rarity: "mythical" },
             { name: "Crescent Shard", chance: "1.3%", rarity: "mythical" },
@@ -184,7 +184,7 @@ const bossData = {
         name: "Qin Shi",
         hp: "10,000,000",
         location: "Boss Island",
-        image: "../../assets/bosses/QinShi.png",
+        image: "../../assets/Bosses/QinShi.png",
         drops: [
             { name: "Qin Shin BlindFlold", chance: "5%", rarity: "mythical" },
             { name: "Imperial Seal", chance: "5%", rarity: "mythical" },
@@ -202,7 +202,7 @@ const bossData = {
         name: "Slime",
         hp: "200,000,000",
         location: "Green Plains",
-        image: "../../assets/bosses/Slime.png",
+        image: "../../assets/Bosses/Slime.png",
         drops: [
             { name: "Slime Core", chance: "5%", rarity: "mythical" },
             { name: "Slime Wings", chance: "5%", rarity: "mythical" },
@@ -215,7 +215,7 @@ const bossData = {
         name: "Solo Hunter",
         hp: "6,000,000",
         location: "Sailor Island",
-        image: "../../assets/bosses/SoloHunter.png",
+        image: "../../assets/Bosses/SoloHunter.png",
         drops: [
             { name: "Shadow Heart", chance: "4%", rarity: "mythical" },
             { name: "Solo Hunter Cape", chance: "6%", rarity: "mythical" },
@@ -232,7 +232,7 @@ const bossData = {
         name: "Vampire King",
         hp: "20,000,000",
         location: "Sailor Island",
-        image: "../../assets/bosses/VampireKing.png",
+        image: "../../assets/Bosses/VampireKing.png",
         drops: [
             { name: "Casull", chance: "4%", rarity: "mythical" },
             { name: "Blood Ring", chance: "4%", rarity: "mythical" },
@@ -249,7 +249,7 @@ const bossData = {
         name: "Soul Reaper",
         hp: "65,000,000",
         location: "Boss Island",
-        image: "../../assets/bosses/SoulReaper.png",
+        image: "../../assets/Bosses/SoulReaper.png",
         drops: [
             { name: "Soul Flame", chance: "1.4%", rarity: "mythical" },
             { name: "Spiritual Core", chance: "3.5%", rarity: "mythical" },
@@ -266,7 +266,7 @@ const bossData = {
         name: "Strongest in History",
         hp: "125,000,000",
         location: "Shinjuku Island",
-        image: "../../assets/bosses/StrongestInHistory.png",
+        image: "../../assets/Bosses/StrongestInHistory.png",
         drops: [
             { name: "Cursed Flesh", chance: "1.3%", rarity: "mythical" },
             { name: "Divine Wheel", chance: "2.5%", rarity: "mythical" },
@@ -279,7 +279,7 @@ const bossData = {
         name: "Strongest of Today",
         hp: "180,000,000",
         location: "Shinjuku Island",
-        image: "../../assets/bosses/StrongestOfToday.png",
+        image: "../../assets/Bosses/StrongestOfToday.png",
         drops: [
             { name: "Infinity Essence", chance: "1.3%", rarity: "mythical" },
             { name: "Limitless Sorcerer Haori", chance: "2.5%", rarity: "mythical" },
@@ -292,7 +292,7 @@ const bossData = {
         name: "Ninja Island",
         hp: "2,000,000,000",
         location: "Hidden Leaf Ruins",
-        image: "../../assets/bosses/StrongestShinobi.png",
+        image: "../../assets/Bosses/StrongestShinobi.png",
         drops: [
             { name: "Path Fragment", chance: "0.88%", rarity: "mythical" },
             { name: "Eternal Core", chance: "2%", rarity: "mythical" },
@@ -309,7 +309,7 @@ const bossData = {
         name: "True Manipulator",
         hp: "130,000,000",
         location: "Master's Void",
-        image: "../../assets/bosses/TrueManipulator.png",
+        image: "../../assets/Bosses/TrueManipulator.png",
         drops: [
             { name: "Evolution Fragment", chance: "32.77%", rarity: "mythical" },
             { name: "Tarnscendent Core", chance: "11.21%", rarity: "mythical" },
@@ -322,7 +322,7 @@ const bossData = {
         name: "Yamato",
         hp: "95,000,000",
         location: "Onigashima Roof",
-        image: "../../assets/bosses/Yamato.png",
+        image: "../../assets/Bosses/Yamato.png",
         drops: [
             { name: "Azure Heart", chance: "1%", rarity: "mythical" },
             { name: "Imperial Outfit", chance: "1.8%", rarity: "mythical" },
