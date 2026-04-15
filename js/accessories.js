@@ -3,7 +3,7 @@ const accessoriesData = [
     { name: "Holy Armor", rarity: "Legendary", stats: "35% DEF, 20% DMG, 15% DMG Reduction", method: "Knight boss (5%)", location: "Drum Island", image: "../assets/accessories/holy.png" },
     { name: "Vessel Hair", rarity: "Legendary", stats: "30% DEF, 22% DMG, 12% DMG Reduction", method: "Cursed Vessel boss (5%)", location: "Shibuya", image: "../assets/accessories/vessel.png" },
     { name: "Manipulator Haori", rarity: "Mythical", stats: "50% DEF, 40% DMG, 15% DMG Reduction", method: "Manipulator boss (4%)", location: "Hueco Mundo", image: "../assets/accessories/manipulator.png" },
-    { name: "Vampier Coat", rarity: "Mythical", stats: "40% DEF, 37% DMG, 15% DMG Reduction", method: "Vampier King boss (3%)", location: "Sailor Island", image: "../assets/accessories/vampire.png" },
+    { name: "VampireCoat", rarity: "Mythical", stats: "40% DEF, 37% DMG, 15% DMG Reduction", method: "Vampier King boss (3%)", location: "Sailor Island", image: "../assets/accessories/vampire.png" },
     { name: "Demon King Outfit", rarity: "Mythical", stats: "85% DEF, 62% DMG, 10% DMG Reduction", method: "Demon King boss (0.75% – 1.25%)", location: "Academy Island", image: "../assets/accessories/demonking.png" },
     { name: "Divine Wheel", rarity: "Mythical", stats: "70% DEF, 50% DMG, 15% DMG Reduction", method: "Strongest in History boss (1.25% – 2%)", location: "Shinjuku", image: "../assets/accessories/divinewheel.png" },
     { name: "Gilgamesh Armor", rarity: "Mythical", stats: "80% DEF, 60% DMG, 15% DMG Reduction", method: "Gilgamesh boss (1.5% – 1.8%)", location: "Boss Island", image: "../assets/accessories/golden.png" },
