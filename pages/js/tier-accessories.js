@@ -22,7 +22,7 @@ const accessoryTierData = [
     { name: "Shadow Cloak", raridade: "Mythical", tier: "B" },
     { name: "Hollow Mask", raridade: "Mythical", tier: "B" },
     { name: "Manipulator Haori", raridade: "Mythical", tier: "B" },
-    { name: "Vampier Coat", raridade: "Mythical", tier: "B" },
+    { name: "Vampire Coat", raridade: "Mythical", tier: "B" },
     { name: "Ragna Sigil", raridade: "Mythical", tier: "B" },
     { name: "Hunter Cape", raridade: "Mythical", tier: "B" },
     // TIER C
