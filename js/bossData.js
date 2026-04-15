@@ -228,7 +228,7 @@ const bossData = {
             { name: "Race Reroll", chance: "100%", rarity: "epic" }
         ]
     },
-    "vampierking": {
+    "vampireking": {
         name: "Vampire King",
         hp: "20,000,000",
         location: "Sailor Island",
