@@ -20,7 +20,7 @@ const meleeTierData = [
     { name: "Cursed Vessel", raridade: "Legendary", tier: "C" },
 
     // TIER D
-    { name: "Vampier King", raridade: "Mythical", tier: "D" },
+    { name: "Vampire King", raridade: "Mythical", tier: "D" },
     { name: "Combat", raridade: "Common", tier: "D" }
 ];
 
